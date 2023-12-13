@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="static/css/style.css" />
+    <title>картинки</title>
+  </head>
+  <body>
+    <nav class="top-menu">
+      <a class="navbar-logo" href="index3.html"
+        ><img src="./index3_files/1.png"
+      /></a>
+      <ul class="menu-main">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="index1.html">Статьи</a></li>
+        <li><a href="index2.html">Полезное</a></li>
+        <li><a href="index3.html">Картинки животных</a></li>
+        <li><a href="index4.html">Обратная связь </a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="mySlides" style="display: block">
+        <div class="numbertext">1 / 7</div>
+        <img src="./index3_files/6.jpg" style="width: 100%" />
+      </div>
+      <div class="mySlides" style="display: none">
+        <div class="numbertext">2 / 7</div>
+        <img src="./index3_files/7.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides" style="display: none">
+        <div class="numbertext">3 / 7</div>
+        <img src="./index3_files/8.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides" style="display: none">
+        <div class="numbertext">4 / 7</div>
+        <img src="./index3_files/9.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides" style="display: none">
+        <div class="numbertext">5 / 7</div>
+        <img src="./index3_files/10.jpg" style="width: 100%" />
+      </div>
+
+      <div class="mySlides" style="display: none">
+        <div class="numbertext">6 / 7</div>
+        <img src="./index3_files/11.jpg" style="width: 100%" />
+      </div>
+      <div class="mySlides" style="display: none">
+        <div class="numbertext">7 / 7</div>
+        <img src="./index3_files/12.jpg" style="width: 100%" />
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+      <div class="caption-container">
+        <p id="caption">любимец в пакете</p>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <img
+            class="demo cursor active"
+            src="./index3_files/6.jpg"
+            style="width: 100%"
+            onclick="currentSlide(1)"
+            alt="любимец в пакете "
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="./index3_files/7.jpg"
+            style="width: 100%"
+            onclick="currentSlide(2)"
+            alt="любимец не довелен"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="./index3_files/8.jpg"
+            style="width: 100%"
+            onclick="currentSlide(3)"
+            alt="любимец устал учиться "
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="./index3_files/9.jpg"
+            style="width: 100%"
+            onclick="currentSlide(4)"
+            alt="любимец на солнышке"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="./index3_files/10.jpg"
+            style="width: 100%"
+            onclick="currentSlide(5)"
+            alt="любимец за решеткой"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="./index3_files/11.jpg"
+            style="width: 100%"
+            onclick="currentSlide(6)"
+            alt="любимец хепи нью э"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="./index3_files/12.jpg"
+            style="width: 100%"
+            onclick="currentSlide(7)"
+            alt="стильный любимец"
+          />
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+      }
+    </script>
+  </body>
+</html>
